@@ -12,3 +12,7 @@ mainMenu = ReplyKeyboardMarkup(resize_keyboard=True).add(btnRandom, btnCreateNew
 btnInfo = KeyboardButton('Info')
 btnMoney = KeyboardButton('Current Stock price')
 otherMenu = ReplyKeyboardMarkup(resize_keyboard=True).add(btnInfo, btnMoney, btnMain)
+# Client menu
+newClientMenu = KeyboardButton('Новый Клиент')
+findClientMenu = KeyboardButton('Поиск Клиента')
+clientMenu = ReplyKeyboardMarkup(resize_keyboard=True).add(newClientMenu, findClientMenu, btnMain)

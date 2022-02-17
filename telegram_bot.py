@@ -1,5 +1,12 @@
 # https://www.youtube.com/watch?v=I8K3iYcxPl0&list=RDCMUC7f5bVxWsm3jlZIPDzOMcAg&start_radio=1&rv=I8K3iYcxPl0&t=158
 
+# https://www.youtube.com/watch?v=i5qHdtq4PSI&list=PLwVBSkoL97Q3phZRyInbM4lShvS1cBl-U&index=11&t=0s
+
+# https://github.com/Latand/telegram-bot-lessons/blob/1d5cc91452e532d6d2a176759766b7226efa0532/lesson-7/keyboards/inline/menu_keyboards.py#L13
+
+
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.utils.callback_data import CallbackData
 
 from bot_requests import *
 import logging
@@ -8,6 +15,9 @@ from aiogram import Bot, Dispatcher, executor, types
 import markups as nav
 import random
 from filters import IsAdminFilter
+
+
+
 
 logging.basicConfig(level=logging.INFO)
 if os.path.exists("env.py"):
@@ -97,8 +107,8 @@ async def bot_menu(message: types.Message):
     elif message.text == "Создать заявку":
         await bot.send_message(message.from_user.id, "Веедите текст в формате: " + '\n' +
                                "время(11-12), имя, телефон, адресс, заметки")
-        # await bot.send_message(message.from_user.id, "Создать заявку",
-        #                        reply_markup=nav.mainMenu)
+        await bot.send_message(message.from_user.id, "Меню клиентов",
+                               reply_markup=nav.clientMenu)
 
     elif message.text == "Другое":
         await bot.send_message(message.from_user.id, "Другое",
@@ -112,6 +122,8 @@ async def bot_menu(message: types.Message):
                                )
     else:
         await message.reply("Uknown command")
+
+
 
 
 # run long-polling
