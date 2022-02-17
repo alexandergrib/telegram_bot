@@ -86,7 +86,8 @@ async def bot_menu(message: types.Message):
                                    (user_orders[0]['time'])) + '\n' +
                                'Заявка: ' + str(
                                    (user_orders[0]['work_required'])) + '\n' +
-                               'worker_id: ' + str((user_orders[0]['worker_id'])) + '\n' +
+                               'worker_id: ' + str(
+                                   (user_orders[0]['worker_id'])) + '\n' +
                                'user_id: ' + str(message.from_user.id),
                                reply_markup=nav.btnMain)
 
@@ -94,8 +95,10 @@ async def bot_menu(message: types.Message):
         await bot.send_message(message.from_user.id, "Главное меню",
                                reply_markup=nav.mainMenu)
     elif message.text == "Создать заявку":
-        await bot.send_message(message.from_user.id, "Создать заявку",
-                               reply_markup=nav.mainMenu)
+        await bot.send_message(message.from_user.id, "Веедите текст в формате: " + '\n' +
+                               "время(11-12), имя, телефон, адресс, заметки")
+        # await bot.send_message(message.from_user.id, "Создать заявку",
+        #                        reply_markup=nav.mainMenu)
 
     elif message.text == "Другое":
         await bot.send_message(message.from_user.id, "Другое",
