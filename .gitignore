@@ -1,7 +1,7 @@
 core.Microsoft*
 core.mongo*
 core.python*
-env.py
+config.py
 __pycache__/
 *.py[cod]
 node_modules/
@@ -14,3 +14,4 @@ images_sources.txt
 venv
 rsa
 rsa.pub
+dont_commit
